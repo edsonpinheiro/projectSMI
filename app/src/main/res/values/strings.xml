@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SMI</string>
+    <string name="menu_relatorio">Relatórios</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_localizacao">Localização</string>
+    <string name="menu_chamadas">Chamadas</string>
+    <string name="menu_alertas">Alertas</string>
+    <string name="menu_bluetooth_pair">Pareamento Bluetooth</string>
+    <string name="menu_sobrenos">Sobre nós</string>
+
+    <string name="navigation_drawer_open">Abra o navigation drawer</string>
+    <string name="navigation_drawer_close">Fecha o navigation drawer</string>
+</resources>

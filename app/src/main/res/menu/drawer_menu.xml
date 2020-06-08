@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    tools:openDrawer="start">
+
+    <!-- Utilizamos 'single' para apenas uma função poder ser selecionada-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/menu_dashboard" />
+        <item
+            android:id="@+id/nav_reports"
+            android:icon="@drawable/ic_chart"
+            android:title="@string/menu_relatorio" />
+        <item
+            android:id="@+id/nav_localization"
+            android:icon="@drawable/ic_localization"
+            android:title="@string/menu_localizacao" />
+        <item
+            android:id="@+id/nav_call"
+            android:icon="@drawable/ic_call"
+            android:title="@string/menu_chamadas" />
+        <item
+            android:id="@+id/nav_alert"
+            android:icon="@drawable/ic_alarm"
+            android:title="@string/menu_alertas" />
+    </group>
+
+    <!-- Criamos usa seção separada, essa ação pode abrir um dialog ou fragment falando sobre nós e o projeto -->
+    <item android:title="Configuração">
+        <menu>
+            <item
+                android:id="@+id/nav_bluetooth"
+                android:icon="@drawable/ic_bluetooth"
+                android:title="@string/menu_bluetooth_pair" />
+            <item
+                android:id="@+id/nav_aboutus"
+                android:title="@string/menu_sobrenos" />
+        </menu>
+    </item>
+</menu>
