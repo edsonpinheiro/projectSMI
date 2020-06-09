@@ -14,12 +14,6 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 import br.com.daniel.ramos.projetosmi.R;
-import br.com.daniel.ramos.projetosmi.View.AboutusFragment;
-import br.com.daniel.ramos.projetosmi.View.AlertFragment;
-import br.com.daniel.ramos.projetosmi.View.CallFragment;
-import br.com.daniel.ramos.projetosmi.View.DashboardFragment;
-import br.com.daniel.ramos.projetosmi.View.LocalizationFragment;
-import br.com.daniel.ramos.projetosmi.View.ReportsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;

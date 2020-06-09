@@ -10,4 +10,19 @@
 
     <string name="navigation_drawer_open">Abra o navigation drawer</string>
     <string name="navigation_drawer_close">Fecha o navigation drawer</string>
+    <string name="dash_reports_title">Relatórios</string>
+    <string name="dash_reports_description">Consulte os dados coletados pelo dispositivo</string>
+    <string name="dash_localization_title">Localização</string>
+    <string name="dash_localization_description">Solicite a localização do indivíduo monitorado</string>
+    <string name="dash_call_title">Chamada</string>
+    <string name="dash_call_description">Efetue uma ligação ao indíviduo monitorado</string>
+    <string name="dash_alarm_title">Alertas</string>
+    <string name="dash_alarm_description">Configure alarmes para o dispositivo vestivel</string>
+    <string name="dash_bluetooth_title">Parear Dispositivo</string>
+    <string name="dash_bluetooth_description">Configure seu dispositivo vestivel com o aplicativo</string>
+    <string name="dash_reports_contentDesc">Relatórios de sinais vitais coletados pelo dispositivo vestivel</string>
+    <string name="dash_localization_contentDesc">Solicita a localização do usuário utilizando o dispositivo vestivel</string>
+    <string name="dash_call_contentDesc">Realiza uma chamada para o número do dispositivo vestivel</string>
+    <string name="dash_alarm_contentDesc">Configure alarmes para o dispositivo vestivel</string>
+    <string name="dash_bluetooth_contentDesc">Configure a aplicação com o dispositivo vestível para comunicação</string>
 </resources>
