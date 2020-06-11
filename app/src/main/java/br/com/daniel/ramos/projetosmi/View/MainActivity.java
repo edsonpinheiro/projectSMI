@@ -15,6 +15,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import br.com.daniel.ramos.projetosmi.R;
 
+// TODO: Implementar MVP
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
 

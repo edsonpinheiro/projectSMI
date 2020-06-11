@@ -12,18 +12,53 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import br.com.daniel.ramos.projetosmi.Presenter.DashboardPresenter;
+import br.com.daniel.ramos.projetosmi.Presenter.PresenterMVP;
 import br.com.daniel.ramos.projetosmi.R;
 
-public class DashboardFragment extends Fragment implements View.OnClickListener{
+public class DashboardFragment extends Fragment implements ViewMVP.DashboardView, View.OnClickListener{
 
     private CardView reportsCard, localizationCard, callCard, alarmCard, bluetoothCard;
+    private PresenterMVP.DashboardPresenter mPresenter;
+
 
     @Nullable
     @Override
     // Chamado quando a view está prestes a ser criada
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        initViews(view);
 
+        // Instancia o presenter
+        mPresenter = new DashboardPresenter(this);
+
+        return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        FragmentManager fm = getFragmentManager();
+        // TODO: Quando selecionado por meio dos botões não é atualizado o navigationDrawer, assim o fragment atual não é marcado
+        switch (v.getId()){
+            case R.id.dash_reportsID :
+                mPresenter.replaceFragment(fm, new ReportsFragment(), "reportsFragment");
+            break;
+            case R.id.dash_localizationID :
+                mPresenter.replaceFragment(fm, new LocalizationFragment(), "localizationFragment");
+            break;
+            case R.id.dash_callID :
+                mPresenter.replaceFragment(fm, new CallFragment(), "callFragment");
+            break;
+            case R.id.dash_bluetoothID :
+                mPresenter.replaceFragment(fm, new BluetoothFragment(), "bluetoothFragment");
+            break;
+            case R.id.dash_alarmID :
+                mPresenter.replaceFragment(fm, new AlertFragment(), "alertFragment");
+            break;
+        }
+    }
+
+    public void initViews(View view) {
         reportsCard = view.findViewById(R.id.dash_reportsID);
         reportsCard.setOnClickListener(this);
         localizationCard = view.findViewById(R.id.dash_localizationID);
@@ -34,35 +69,11 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
         alarmCard.setOnClickListener(this);
         bluetoothCard = view.findViewById(R.id.dash_bluetoothID);
         bluetoothCard.setOnClickListener(this);
-
-
-        return view;
     }
 
     @Override
-    public void onClick(View v) {
-        FragmentManager fm = getFragmentManager();
-    // TODO: Quando selecionado por meio dos botões não é atualizado o navigationDrawer, assim o fragment atual não é marcado
-        switch (v.getId()){
-            case R.id.dash_reportsID :
-                fm.beginTransaction().replace(R.id.fragment_container, new ReportsFragment(), "reportsFragment").commit();
-            break;
-            case R.id.dash_localizationID :
-                fm.beginTransaction().replace(R.id.fragment_container, new LocalizationFragment(), "localizationFragment").commit();
-            break;
-            case R.id.dash_callID :
-                fm.beginTransaction().replace(R.id.fragment_container, new CallFragment(), "callFragment").commit();
-            break;
-            case R.id.dash_bluetoothID :
-                // TODO: Pensar na logica que será implementada aqui
-            break;
-            case R.id.dash_alarmID :
-                fm.beginTransaction().replace(R.id.fragment_container, new AlertFragment(), "alertFragment").commit();
-            break;
-        }
-    }
-
-    public void initViews() {
-
+    public void onDestroy() {
+        mPresenter.onDestroy();
+        super.onDestroy();
     }
 }
