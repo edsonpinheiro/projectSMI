@@ -1,15 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4f4">
-
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    
+    <!-- Apresenta se o Bluetooth está disponível ou nãoi -->
     <TextView
+        android:id="@+id/statusBluetoothTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+
+    <!-- Imagem Bluetooth (on/off) -->
+    <ImageView
+        android:id="@+id/bluetoothIv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#000"/>
+
+    <!-- Ligar Bluetooth -->
+    <Button
+        android:id="@+id/bluetoothONOFFBtn"
+        android:minWidth="200dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bluetooth Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:text="Ativar/Desativar Bluetooth"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <!-- Buscar dispositivos Bluetooth -->
+    <Button
+        android:id="@+id/discoverBluetoothBtn"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar Dispositivos"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <!-- Retorna a lista de dispositivos pareados -->
+    <Button
+        android:id="@+id/pairedBluetoothBtn"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar Dispositivos"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <!-- Retorna a lista de dispositivos pareados -->
+    <TextView
+        android:id="@+id/pairedTv"
+        android:minWidth="200dp"
+        android:text=""
+        android:textColor="#000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Mensagem para informar se o Bluetooth precisa ser ativado -->
+    <TextView
+        android:id="@+id/informeMessageTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="#000"/>
 
 
-</RelativeLayout>
+
+
+
+</LinearLayout>
