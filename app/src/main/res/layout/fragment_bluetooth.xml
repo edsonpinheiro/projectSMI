@@ -5,59 +5,70 @@
     android:background="@color/colorBackground"
     android:orientation="vertical"
     android:gravity="center_horizontal">
-    
-    <!-- Apresenta se o Bluetooth está disponível ou nãoi -->
-    <TextView
-        android:id="@+id/statusBluetoothTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="#000"/>
 
     <!-- Imagem Bluetooth (on/off) -->
     <ImageView
         android:id="@+id/bluetoothIv"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="#000"/>
 
     <!-- Ligar Bluetooth -->
     <Button
         android:id="@+id/bluetoothONOFFBtn"
-        android:minWidth="200dp"
+        android:minWidth="250dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ativar/Desativar Bluetooth"
         style="@style/Widget.AppCompat.Button.Colored" />
 
-    <!-- Buscar dispositivos Bluetooth -->
+    <!-- Habilita ou desabilita a descoberta de devices -->
     <Button
-        android:id="@+id/discoverBluetoothBtn"
-        android:minWidth="200dp"
+        android:id="@+id/enableDisableDiscover"
+        android:minWidth="250dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar Dispositivos"
+        android:text="Enable/Disable Discover"
         style="@style/Widget.AppCompat.Button.Colored" />
 
-    <!-- Retorna a lista de dispositivos pareados -->
+    <!-- Habilita ou desabilita a descoberta de devices -->
     <Button
-        android:id="@+id/pairedBluetoothBtn"
-        android:minWidth="200dp"
+        android:id="@+id/findUnpairedDevices"
+        android:minWidth="250dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar Dispositivos"
+        android:text="Find unpaired devices"
         style="@style/Widget.AppCompat.Button.Colored" />
 
-    <!-- Retorna a lista de dispositivos pareados -->
-    <TextView
-        android:id="@+id/pairedTv"
-        android:minWidth="200dp"
-        android:text=""
-        android:textColor="#000"
+    <!-- Button para iniciar a conexão -->
+    <Button
+        android:id="@+id/btnStartConnection"
+        android:minWidth="250dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Connection"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Text Here"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"/>
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEND" />
+    </LinearLayout>
 
     <!-- Mensagem para informar se o Bluetooth precisa ser ativado -->
     <TextView
@@ -68,6 +79,24 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textColor="#000"/>
+
+    <!-- ListView para a lista de dispositivos pareados -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/newDevicesLv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
 
 
 
