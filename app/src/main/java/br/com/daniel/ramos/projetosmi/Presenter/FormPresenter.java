@@ -1,16 +1,10 @@
 package br.com.daniel.ramos.projetosmi.Presenter;
 
 import android.util.Log;
-import android.view.View;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
-import br.com.daniel.ramos.projetosmi.Model.User;
 import br.com.daniel.ramos.projetosmi.Model.UserRepository;
 import br.com.daniel.ramos.projetosmi.Utils.Utils;
 import br.com.daniel.ramos.projetosmi.View.ViewMVP;
-import io.realm.internal.Util;
 
 public class FormPresenter implements PresenterMVP.FormPresenter, UserRepository.OnTransactionCallBack {
     private static final String TAG = "FormPresenter";
@@ -56,12 +50,12 @@ public class FormPresenter implements PresenterMVP.FormPresenter, UserRepository
 
     @Override
     public void updateUser() {
-
+        //TODO updateUser
     }
 
     @Override
     public void deleteUserFromReal() {
-
+        //TODO: deleteUserFromRealm
     }
 
     @Override
@@ -71,14 +65,12 @@ public class FormPresenter implements PresenterMVP.FormPresenter, UserRepository
 
     @Override
     public void onRealmSuccess() {
-        // TODO: SHOW SUCCESS ADD
         Log.d(TAG, "onRealmSuccess: Called");
         mView.showAddUserSuccess();
     }
 
     @Override
     public void onRealmError(Throwable e) {
-        // TODO: SHOW ERROR
         e.printStackTrace();
         mView.showAddUserSuccess();
     }

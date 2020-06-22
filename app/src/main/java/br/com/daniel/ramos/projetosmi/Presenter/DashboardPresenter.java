@@ -1,9 +1,5 @@
 package br.com.daniel.ramos.projetosmi.Presenter;
-// TODO: Android Framework only in Views???
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
-import br.com.daniel.ramos.projetosmi.R;
 import br.com.daniel.ramos.projetosmi.View.ViewMVP;
 
 public class DashboardPresenter implements PresenterMVP.DashboardPresenter {
@@ -12,11 +8,6 @@ public class DashboardPresenter implements PresenterMVP.DashboardPresenter {
 
     public DashboardPresenter(ViewMVP.DashboardView view) {
         mView = view;
-    }
-
-    @Override
-    public void replaceFragment(FragmentManager fm, Fragment fragment, String tag) {
-        fm.beginTransaction().replace(R.id.fragment_container, fragment, tag).commit();
     }
 
     /*

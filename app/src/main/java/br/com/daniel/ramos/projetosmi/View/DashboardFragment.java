@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import br.com.daniel.ramos.projetosmi.Presenter.DashboardPresenter;
 import br.com.daniel.ramos.projetosmi.Presenter.PresenterMVP;
@@ -41,25 +42,24 @@ public class DashboardFragment extends Fragment implements ViewMVP.DashboardView
 
     @Override
     public void onClick(View v) {
-        fm = getFragmentManager();
         // TODO: Quando selecionado por meio dos botões não é atualizado o navigationDrawer, assim o fragment atual não é marcado
         switch (v.getId()){
             case R.id.dash_reportsID :
-                mPresenter.replaceFragment(fm, new ReportsFragment(), "reportsFragment");
+                setFragment(new ReportsFragment());
             break;
             case R.id.dash_localizationID :
-                mPresenter.replaceFragment(fm, new LocalizationFragment(), "localizationFragment");
+                setFragment(new LocalizationFragment());
             break;
             case R.id.dash_callID :
-                mPresenter.replaceFragment(fm, new CallFragment(), "callFragment");
-            break;
+                setFragment(new CallFragment());
+                break;
             case R.id.dash_setupID:
                 // TODO: Adicionar Breadcumb
-                mPresenter.replaceFragment(fm, new FormFragment(), "setupFragment");
+                setFragment(new FormFragment());
                 break;
             case R.id.dash_alarmID :
-                mPresenter.replaceFragment(fm, new AlertFragment(), "alertFragment");
-            break;
+                setFragment(new AlertFragment());
+                break;
         }
     }
 
@@ -80,5 +80,15 @@ public class DashboardFragment extends Fragment implements ViewMVP.DashboardView
     public void onDestroy() {
         mPresenter.onDestroy();
         super.onDestroy();
+    }
+
+    @Override
+    public void setFragment(Fragment frag) {
+        Log.d(TAG, "setFragment: Called");
+        Fragment fragment = frag;
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

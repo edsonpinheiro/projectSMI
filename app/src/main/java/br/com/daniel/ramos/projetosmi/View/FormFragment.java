@@ -98,16 +98,21 @@ public class FormFragment extends Fragment implements  ViewMVP.FormView, View.On
     @Override
     public void nextView() {
         Log.d(TAG, "nextView: Called");
-        Fragment bluetoothFrag = new BluetoothFragment();
+        Fragment bluetoothFragment = new BluetoothFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, bluetoothFrag);
+        transaction.replace(R.id.fragment_container, bluetoothFragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
 
     @Override
     public void cancelAction() {
-        getFragmentManager().beginTransaction().replace(R.id.fragment_container, new DashboardFragment(), "dashboardFragment");
+        Log.d(TAG, "cancelAction: Called");
+        Fragment dashboardFragment = new DashboardFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, dashboardFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override

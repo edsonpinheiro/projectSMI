@@ -14,9 +14,10 @@ import java.util.UUID;
 
 public interface PresenterMVP {
 
+     // TODO: Create BaseFragment with mView = null and close Realm instance
+
     /* Representa o Presenter no MVP para o DashboardFragment */
     interface DashboardPresenter {
-        void replaceFragment(FragmentManager fm, Fragment fragment, String tag);
         void onDestroy();
     }
 

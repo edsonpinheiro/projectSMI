@@ -4,13 +4,17 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.widget.EditText;
 
+import androidx.fragment.app.Fragment;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
 public interface ViewMVP {
 
     /* Representa a View no MVP para o DashboardFragment */
-    interface DashboardView {}
+    interface DashboardView {
+        void setFragment(Fragment frag);
+    }
 
     /* Representa a View no MVP para o BluetoothFragment */
     interface BluetoothView {
