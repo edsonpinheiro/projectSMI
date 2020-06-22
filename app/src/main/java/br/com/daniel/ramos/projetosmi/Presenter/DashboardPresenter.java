@@ -1,5 +1,5 @@
 package br.com.daniel.ramos.projetosmi.Presenter;
-
+// TODO: Android Framework only in Views???
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 

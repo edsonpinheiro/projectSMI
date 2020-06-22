@@ -24,5 +24,6 @@
     <string name="dash_localization_contentDesc">Solicita a localização do usuário utilizando o dispositivo vestivel</string>
     <string name="dash_call_contentDesc">Realiza uma chamada para o número do dispositivo vestivel</string>
     <string name="dash_alarm_contentDesc">Configure alarmes para o dispositivo vestivel</string>
-    <string name="dash_bluetooth_contentDesc">Configure a aplicação com o dispositivo vestível para comunicação</string>
+    <string name="dash_setup_contentDesc">Configure a aplicação com o dispositivo vestível para comunicação</string>
+    <string name="add_user_error">Falha ao configurar usuário</string>
 </resources>

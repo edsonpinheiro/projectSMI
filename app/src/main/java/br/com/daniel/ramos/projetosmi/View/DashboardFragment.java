@@ -2,6 +2,7 @@ package br.com.daniel.ramos.projetosmi.View;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,11 @@ import br.com.daniel.ramos.projetosmi.R;
 
 public class DashboardFragment extends Fragment implements ViewMVP.DashboardView, View.OnClickListener{
 
-    private CardView reportsCard, localizationCard, callCard, alarmCard, bluetoothCard;
+    private static final String TAG = "DashboardFragment";
+
+    private CardView reportsCard, localizationCard, callCard, alarmCard, setupCard;
     private PresenterMVP.DashboardPresenter mPresenter;
+    private FragmentManager fm;
 
 
     @Nullable
@@ -37,7 +41,7 @@ public class DashboardFragment extends Fragment implements ViewMVP.DashboardView
 
     @Override
     public void onClick(View v) {
-        FragmentManager fm = getFragmentManager();
+        fm = getFragmentManager();
         // TODO: Quando selecionado por meio dos botões não é atualizado o navigationDrawer, assim o fragment atual não é marcado
         switch (v.getId()){
             case R.id.dash_reportsID :
@@ -49,9 +53,10 @@ public class DashboardFragment extends Fragment implements ViewMVP.DashboardView
             case R.id.dash_callID :
                 mPresenter.replaceFragment(fm, new CallFragment(), "callFragment");
             break;
-            case R.id.dash_bluetoothID :
-                mPresenter.replaceFragment(fm, new BluetoothFragment(), "bluetoothFragment");
-            break;
+            case R.id.dash_setupID:
+                // TODO: Adicionar Breadcumb
+                mPresenter.replaceFragment(fm, new FormFragment(), "setupFragment");
+                break;
             case R.id.dash_alarmID :
                 mPresenter.replaceFragment(fm, new AlertFragment(), "alertFragment");
             break;
@@ -67,8 +72,8 @@ public class DashboardFragment extends Fragment implements ViewMVP.DashboardView
         callCard.setOnClickListener(this);
         alarmCard = view.findViewById(R.id.dash_alarmID);
         alarmCard.setOnClickListener(this);
-        bluetoothCard = view.findViewById(R.id.dash_bluetoothID);
-        bluetoothCard.setOnClickListener(this);
+        setupCard = view.findViewById(R.id.dash_setupID);
+        setupCard.setOnClickListener(this);
     }
 
     @Override

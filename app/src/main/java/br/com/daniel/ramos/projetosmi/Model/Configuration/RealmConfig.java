@@ -1,4 +1,4 @@
-package br.com.daniel.ramos.projetosmi.Configuration;
+package br.com.daniel.ramos.projetosmi.Model.Configuration;
 
 import android.app.Application;
 import io.realm.RealmConfiguration;

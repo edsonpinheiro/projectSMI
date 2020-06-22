@@ -211,7 +211,7 @@
         android:orientation="horizontal">
         <!-- Cardview: Pareamento Bluetooth -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/dash_bluetoothID"
+            android:id="@+id/dash_setupID"
             android:layout_width="320dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
@@ -228,14 +228,14 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:padding="10dp"
-                    android:src="@drawable/dash_bluetooth"
-                    android:contentDescription="@string/dash_bluetooth_contentDesc" />
+                    android:src="@drawable/dash_setup"
+                    android:contentDescription="@string/dash_setup_contentDesc" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/dash_bluetooth_title"
+                    android:text="Configurar Aplicação"
                     android:textStyle="bold" />
 
                 <View
@@ -249,7 +249,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="@string/dash_bluetooth_description"
+                    android:text="Configure o sistema, e começe a utilizar todos os recursos"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="12sp" />
             </LinearLayout>

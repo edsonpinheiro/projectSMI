@@ -40,4 +40,26 @@ public interface PresenterMVP {
 
         void checkBTPermissions();
     }
+
+    /* Representa o Presenter no MVP para o BluetoothFragment */
+    interface CallPresenter {
+
+    }
+
+    /* Representa o Presenter no MVP para o FormFragment */
+    interface FormPresenter {
+
+        void backDashboard();
+
+        // Verifica se o conteudo passado no nome e phone são válidos
+        boolean verifyContent(final String nameUser, final String namePersonMonitored, final String phonePersonMonitored);
+
+        void saveNewUser(final String nameUser, final String namePersonMonitored, final String phonePersonMonitored);
+        void updateUser();
+        void deleteUserFromReal();
+
+        void closeRealm();
+
+    }
+
 }

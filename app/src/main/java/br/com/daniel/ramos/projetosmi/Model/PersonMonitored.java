@@ -4,21 +4,20 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
-public class User extends RealmObject {
+public class PersonMonitored extends RealmObject {
 
     @PrimaryKey
     @Required
     private String id;
     @Required
     private String nome;
+    @Required
+    private String telefone;
 
-    private PersonMonitored personMonitored;
+    public PersonMonitored(){}
 
-    public User() {
-    }
-
-    public User(String nome) {
-        this.nome = nome;
+    public PersonMonitored(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getId() {
@@ -33,11 +32,11 @@ public class User extends RealmObject {
         this.nome = nome;
     }
 
-    public PersonMonitored getPersonMonitored() {
-        return personMonitored;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setPersonMonitored(PersonMonitored personMonitored) {
-        this.personMonitored = personMonitored;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 }

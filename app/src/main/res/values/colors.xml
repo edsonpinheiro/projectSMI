@@ -5,6 +5,8 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorBackground">#fcfcfc</color>
     <color name="colorNavHeader">#263445</color>
+    <color name="colorFail">#F44336</color>
+    <color name="colorSuccess">#4CAF50</color>
 
 
     <color name="light_gray">#EDEDED</color>

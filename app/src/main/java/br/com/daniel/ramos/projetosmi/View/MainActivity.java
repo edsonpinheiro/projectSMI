@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -92,6 +93,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.call_menu:
+                Toast.makeText(this, "Making a Call", Toast.LENGTH_SHORT).show();
+                // TODO: Atribuir isso a uma intent para realizar a ligação ACTION_DIAL
+                break;
+
+        }
         return true;
     }
 }
