@@ -62,7 +62,7 @@ public class DashboardFragment extends Fragment implements ViewMVP.DashboardView
                 break;
         }
     }
-
+    //[Edson] Verificar possibilidade de usar ViewBinding, pois aplicação é mais simples e deixa o código mais limpo
     public void initViews(View view) {
         reportsCard = view.findViewById(R.id.dash_reportsID);
         reportsCard.setOnClickListener(this);
@@ -81,7 +81,9 @@ public class DashboardFragment extends Fragment implements ViewMVP.DashboardView
         mPresenter.onDestroy();
         super.onDestroy();
     }
-
+    
+    //[Edson] Esse método pode ser mais resumido, por exemplo, não precisas criar uma nova instância de Fragment, o argumento do método já é uma instância
+    //[Edson] Na transaction podes chamar os métodos em sequência, p. ex.: replace().addToBackStack().commit()
     @Override
     public void setFragment(Fragment frag) {
         Log.d(TAG, "setFragment: Called");
