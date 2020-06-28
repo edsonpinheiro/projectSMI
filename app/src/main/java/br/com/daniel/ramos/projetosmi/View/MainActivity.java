@@ -20,7 +20,7 @@ import br.com.daniel.ramos.projetosmi.R;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
 
-
+    //[Edson] Aqui podes criar uns métodos private pra organizar as atribuições como setar a Toolbar, depois gerenciar Drawer e NavigationView, Toggle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    //[Edson] Aqui podes simplificar deixando apenas o if e chamando o método super no final
     @Override
     public void onBackPressed() {
         if(drawer.isDrawerOpen(GravityCompat.START)) {
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    //[Edson] Uma boa prática aqui é criar um método para gerenciar a chamada de novos Fragments no estilo do setFragment que tu fizestes na Dashboard
+    //[Edson] Só passarias a instância do Fragment pro método e pronto
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
